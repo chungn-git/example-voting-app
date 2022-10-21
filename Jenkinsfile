@@ -36,6 +36,8 @@ pipeline {
       }
       stage('Docker BnP'){
           agent any
+	      
+	  when{ branch 'master' }    
           steps{
             echo 'Packaging vote app with docker'
             script{
