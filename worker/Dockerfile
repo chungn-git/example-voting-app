@@ -1,6 +1,4 @@
-FROM FROM maven:3.5-jdk-8-alpine
-
-RUN mvn package -D skipTests
+FROM maven:3.5-jdk-8-alpine
 
 WORKDIR /code
 
