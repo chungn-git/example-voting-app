@@ -1,15 +1,15 @@
 # Using official python runtime base image
-FROM schoolofdevops/voteapp-python:v0.1.0
+# FROM schoolofdevops/voteapp-python:v0.1.0
+FROM python:3.9-slim
 
 # Set the application directory
 WORKDIR /app
 
-# Install our requirements.txt
-ADD requirements.txt /app/requirements.txt
-RUN pip install -r requirements.txt
-
 # Copy our code from the current folder to /app inside the container
-ADD . /app
+COPY . .
+
+RUN python -m pip install --upgrade pip && \
+    pip install -r requirements.txt
 
 # Make port 80 available for links and/or publish
 EXPOSE 80
