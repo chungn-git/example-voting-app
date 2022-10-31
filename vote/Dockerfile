@@ -2,6 +2,11 @@
 # FROM schoolofdevops/voteapp-python:v0.1.0
 FROM python:3.9-slim
 
+# Define variable
+ARG PORT
+ENV http_proxy=http://web-proxy.corp.hpecorp.net:8080
+ENV https_proxy=http://web-proxy.corp.hpecorp.net:8080
+
 # Set the application directory
 WORKDIR /app
 
